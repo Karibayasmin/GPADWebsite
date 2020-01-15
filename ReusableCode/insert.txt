@@ -1,0 +1,26 @@
+insert
+
+<?php 
+
+if(isset($_POST['companydescriptionsubmit'])){
+	
+	
+	
+	include('../database.php');
+	$companydescription = $_POST['companyDescription'];
+	
+	$qry = "INSERT INTO `adminhome`(`companydescription`) VALUES ('$companydescription')";
+	
+	$run = mysqli_query($con,$qry);
+	
+	if($run==true){
+		
+		?>
+		<script>
+		  alert('Data inserted Successfully');
+		</script>
+		<?php
+	}
+}
+
+?>
